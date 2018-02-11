@@ -11,7 +11,6 @@ chip pin | name | arduino pin
 6 | out 2 |	right motor GND
 7 | in 2 | arduino D3
 8 | V+ motor |battery pack 6V
-
 9 | Enable 2 |	arduino D10
 10 | In 3 |	arduino D9
 11 | Out 3 | left motor GND
