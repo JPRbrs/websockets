@@ -26,14 +26,14 @@ pip install -r requirements
     
     ```
     iface wlan0 inet static 
-        address 192.168.42.1 
+        address 192.168.4.1 
         netmask 255.255.255.0
     ```
     
     * Then in the terminal:
     
     ```
-    sudo ifconfig wlan0 192.168.42.1
+    sudo ifconfig wlan0 192.168.4.1
     sudo reboot
     ```
     
