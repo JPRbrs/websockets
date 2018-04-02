@@ -2,8 +2,6 @@ from flask import Flask, render_template
 from flask_socketio import SocketIO, join_room, emit
 # from codenames import game
 
-print ("Starting app...")
-
 app = Flask(__name__)
 socketio = SocketIO(app)
 ARBITRARY_NUMBER = 15
@@ -21,7 +19,7 @@ def on_create(data):
     room = ARBITRARY_NUMBER
     join_room(room)
     emit('join_room', {'room': room})
-    print ('Data received: size {}, teams {}, dictionary {}'.format(
+    print('Data received: size {}, teams {}, dictionary {}'.format(
         data['size'],
         data['teams'],
         data['dictionary']
