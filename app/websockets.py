@@ -28,16 +28,21 @@ def on_create(data):
         data['teams'],
         data['dictionary']
     ))
+    move_car()
 
 
-@app.route('/move')
-def move():
+def move_car():
     """Move car"""
-    ser = serial.Serial('/dev/ttyACM0', 9600)
+    ser = serial.Serial('/dev/ttyACM1', 9600)
     sent_bytes = ser.write('1'.encode('utf-8'))
     sleep(2)
     print(sent_bytes)
     ser.close()
+
+
+@app.route('/move')
+def move():
+    move_car()
     return render_template('move.html')
 
 
