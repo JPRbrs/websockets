@@ -45,3 +45,6 @@ To run the production server, run ./start. This will use gunicorn to load the ap
 Both servers will be be available at local_ip:8080
 
 ### Find how to connect raspberry with Arduino so rpi sends orders to arduino
+See arduino/test_serial.py and arduino/move_on_serial_read/move_on_serial_read.ino
+### NEXT
+Check wiring on motors and uncomment lines on move_on_serial_read.ino

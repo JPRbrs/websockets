@@ -1,10 +1,12 @@
 from flask import Flask, render_template
 from flask_socketio import SocketIO, join_room, emit
-# from codenames import game
+import serial
+from time import sleep
 
 print("Starting app...")
 
 app = Flask(__name__)
+app.debug = True
 socketio = SocketIO(app)
 ARBITRARY_NUMBER = 15
 
@@ -26,6 +28,17 @@ def on_create(data):
         data['teams'],
         data['dictionary']
     ))
+
+
+@app.route('/move')
+def move():
+    """Move car"""
+    ser = serial.Serial('/dev/ttyACM0', 9600)
+    sent_bytes = ser.write('1'.encode('utf-8'))
+    sleep(2)
+    print(sent_bytes)
+    ser.close()
+    return render_template('move.html')
 
 
 if __name__ == '__main__':

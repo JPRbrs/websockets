@@ -30,20 +30,20 @@ void setup() {
   startTime = millis();
 }
 
-// the loop function runs over and over again forever
 void loop() {
   if (Serial.available() > 0) {
     incomingByte = Serial.read();
+    
     Serial.print(incomingByte);
     Serial.println("Received, going forward");
+    
     digitalWrite(MOTOR,HIGH);
     digitalWrite(MOTOR2, HIGH);
-    //    for (i=0;i<5;i++) {
     digitalWrite(DIRA,LOW); //forward
     digitalWrite(DIRC, LOW);
     digitalWrite(DIRB,HIGH);
     digitalWrite(DIRD, HIGH);
-    delay(400);
+    delay(100);
     digitalWrite(MOTOR,LOW);
     digitalWrite(MOTOR2, LOW);
     }
