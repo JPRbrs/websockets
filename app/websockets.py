@@ -33,7 +33,7 @@ def on_create(data):
 
 def move_car():
     """Move car"""
-    ser = serial.Serial('/dev/ttyACM1', 9600)
+    ser = serial.Serial('/dev/ttyACM0', 9600)
     sent_bytes = ser.write('1'.encode('utf-8'))
     sleep(2)
     print(sent_bytes)

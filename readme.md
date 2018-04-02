@@ -46,5 +46,8 @@ Both servers will be be available at local_ip:8080
 
 ### Find how to connect raspberry with Arduino so rpi sends orders to arduino
 See arduino/test_serial.py and arduino/move_on_serial_read/move_on_serial_read.ino
+Raspberry will need to access the serial port by sudo, and this port needs to be activated with raspi-config
+[see this](http://www.instructables.com/id/Read-and-write-from-serial-port-with-Raspberry-Pi/)
+I need to change the port in the pi and find out why it runs but does not move the wheels as before
 ### NEXT
 Check wiring on motors and uncomment lines on move_on_serial_read.ino
