@@ -2,6 +2,8 @@ from flask import Flask, render_template
 from flask_socketio import SocketIO, join_room, emit
 # from codenames import game
 
+print ("Starting app...")
+
 app = Flask(__name__)
 socketio = SocketIO(app)
 ARBITRARY_NUMBER = 15

@@ -2,3 +2,6 @@
 *~
 *.#*
 venv3/
+.secrets
+app.pid
+*.log
